@@ -1,0 +1,1 @@
+export const addCustomerButton = '[ng-click="addCust()"]';
