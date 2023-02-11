@@ -1,4 +1,4 @@
-export function fillfield(selector, value) {
+export function fillField(selector, value) {
   return cy.get(selector).clear().type(value).should("have.value", value);
 }
  

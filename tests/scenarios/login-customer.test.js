@@ -5,7 +5,7 @@ import * as assert from "@helpers/asserts";
 import * as element from "@helpers/elements";
 import * as route from "@helpers/route";
 
-describe('Login', () => {
+describe('Login Customer', () => {
     //hook
     beforeEach(() => {
        route.visit(ROUTES.login); 
