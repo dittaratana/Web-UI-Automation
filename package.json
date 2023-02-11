@@ -1,0 +1,19 @@
+{
+  "name": "finalprojectui",
+  "version": "1.0.0",
+  "description": "final project Web UI with Cypress",
+  "main": "index.js",
+  "author": "ditthar",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^12.5.1"
+  },
+  "dependencies": {
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "babel-plugin-module-resolver": "4.1.0",
+    "prettier": "^2.8.3"
+  },
+  "scripts": {
+    "cy:open": "cypress open"
+  }
+}
