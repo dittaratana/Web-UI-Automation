@@ -13,7 +13,14 @@ describe('Login Manager', () => {
 
     it('Check manager is able to login succesfully', () => {
         element.click(loginPage.managerLogin);
-        assert.shouldContainText(addCustomer.addCustomerButton,"Add Customer")
+        assert.shouldContainText(addCustomer.addCustomerButton,"Add Customer");
+    });
+
+    it('Check manager is able to logout succesfully', () => {
+        element.click(loginPage.managerLogin);
+        assert.shouldContainText(addCustomer.addCustomerButton,"Add Customer");
+        element.click(loginPage.homeButton);
+        assert.shouldContainText(loginPage.managerLogin,"Bank Manager Login");
     });
 
 });

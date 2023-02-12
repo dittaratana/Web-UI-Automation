@@ -9,19 +9,18 @@ import * as customerListData from "@tests/data/customer-list.data";
 describe('List Customer', () => {
     //hook
     beforeEach(() => {
-       route.visit(ROUTES.login); 
+       route.visit(ROUTES.login);
+       element.click(loginPage.managerLogin);
+       element.click(customerList.customerButton);
+
     });
 
     it('Check manager is able to search customer in list succesfully', () => {
-        element.click(loginPage.managerLogin);
-        element.click(customerList.customerButton);
         element.fillField(customerList.searchCustomer, customerListData.VALID_SEARCH_CUSTOMER_DATA.customer1);
         assert.shouldContainText(customerList.firstNameList,"Harry");
     });
 
-    it('Check manager is able to delete customer from list succesfully', () => {
-        element.click(loginPage.managerLogin);
-        element.click(customerList.customerButton);
+    it('Check manager is able to delete customer in list succesfully', () => {
         element.fillField(customerList.searchCustomer, customerListData.VALID_SEARCH_CUSTOMER_DATA.customer2);
         assert.shouldContainText(customerList.firstNameList,"Ron");
         element.click(customerList.deleteButton);element.fillField(customerList.searchCustomer, customerListData.VALID_SEARCH_CUSTOMER_DATA.customer2);

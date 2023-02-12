@@ -8,14 +8,27 @@ import * as route from "@helpers/route";
 describe('Login Customer', () => {
     //hook
     beforeEach(() => {
-       route.visit(ROUTES.login); 
+        route.visit(ROUTES.login); 
     });
 
     it('Check customer is able to login with invalid user succesfully', () => {
         element.click(loginPage.customerLogin);
         element.select(loginPage.selectField, loginData.VALID_LOGIN_DATA.selectedCustomer1);
         element.click(loginPage.loginButton);
-        assert.shouldContainText(loginPage.successLogin,"Harry Potter")
+        assert.shouldContainText(loginPage.successLogin,"Harry Potter");
+    });
+
+    it('Check customer is able to logout with invalid user succesfully', () => {
+        element.click(loginPage.customerLogin);
+        element.select(loginPage.selectField, loginData.VALID_LOGIN_DATA.selectedCustomer1);
+        element.click(loginPage.loginButton);
+        assert.shouldContainText(loginPage.successLogin,"Harry Potter");
+        element.click(loginPage.logoutButton);
+        element.click(loginPage.homeButton);
+        assert.shouldContainText(loginPage.customerLogin,"Customer Login");
+
+
+
     });
 
 });
